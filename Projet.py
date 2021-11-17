@@ -9,7 +9,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 45,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
    "outputs": [],
    "source": [
@@ -25,29 +29,13 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 46,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "                  id   latitude  longitude  population\n",
-      "0          Amsterdam  52.379189   4.899431      821752\n",
-      "1            Utrecht  52.092876   5.104480      334176\n",
-      "2           Den Haag  52.078663   4.288788      514861\n",
-      "3          Immingham  53.612390  -0.222190        9642\n",
-      "4          Doncaster  53.522850  -1.131160      302400\n",
-      "5   Hoek van Holland  51.977500   4.133330        9382\n",
-      "6         Felixstowe  51.963750   1.351100       23689\n",
-      "7            Ipswich  52.059170   1.155450      133384\n",
-      "8         Colchester  51.889210   0.904210      104390\n",
-      "9             London  51.509865  -0.118092     8787892\n",
-      "10         Rotterdam  51.922500   4.479170      623652\n",
-      "11             Gouda  52.016670   4.708330       70939\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "transport_nodes = pd.read_csv('transport-nodes.csv')\n",
     "print(transport_nodes.to_string())"
@@ -55,32 +43,13 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 47,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "                 src               dst relationship  cost\n",
-      "0          Amsterdam           Utrecht        EROAD    46\n",
-      "1          Amsterdam          Den Haag        EROAD    59\n",
-      "2           Den Haag         Rotterdam        EROAD    26\n",
-      "3          Amsterdam         Immingham        EROAD   369\n",
-      "4          Immingham         Doncaster        EROAD    74\n",
-      "5          Doncaster            London        EROAD   277\n",
-      "6   Hoek van Holland          Den Haag        EROAD    27\n",
-      "7         Felixstowe  Hoek van Holland        EROAD   207\n",
-      "8            Ipswich        Felixstowe        EROAD    22\n",
-      "9         Colchester           Ipswich        EROAD    32\n",
-      "10            London        Colchester        EROAD   106\n",
-      "11             Gouda         Rotterdam        EROAD    25\n",
-      "12             Gouda           Utrecht        EROAD    35\n",
-      "13          Den Haag             Gouda        EROAD    32\n",
-      "14  Hoek van Holland         Rotterdam        EROAD    33\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "transport_relationships = pd.read_csv('transport-relationships.csv')\n",
     "print(transport_relationships.to_string())"
@@ -88,11 +57,16 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 48,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
    "outputs": [],
    "source": [
     "\n",
+<<<<<<< HEAD
     "header = ['id', 'latitude', 'longitude', 'population']\n",
     "data = [\n",
     "    ['Amsterdam', '52.379189', '4.899431', '821752'],\n",
@@ -143,23 +117,32 @@
    ],
    "source": [
     "\n",
+=======
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
     "relationships = transport_relationships[['src', 'dst']]\n",
-    "population_list = transport_nodes.population\n",
-    "population_list = population_list/650\n",
-    "\n",
+    "population_list = []\n",
     "G = nx.Graph()\n",
     "G = nx.from_pandas_edgelist(relationships, 'src', 'dst')\n",
     "\n",
-    "plt.figure(figsize=(10, 8))\n",
+    "for n in G.nodes:\n",
+    "    i = 0\n",
+    "    while(i != len(transport_nodes.id)):\n",
+    "        if n == transport_nodes.id[i]:\n",
+    "            population_list.append(transport_nodes.population[i]/550)\n",
+    "        i += 1\n",
     "\n",
-    "# nx.draw(G, with_labels=True, edge_color='red', width=3, node_color='yellow', node_size=population_list)\n",
-    "\n",
-    "# dict(G.nodes.data())\n"
+    "plt.figure(figsize=(15, 8))\n",
+    "nx.draw(G, with_labels=True, edge_color='red', width=3, node_color='yellow', node_size=population_list)\n",
+    "dict(G.nodes.data())\n"
    ]
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 50,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
    "outputs": [],
    "source": [
@@ -171,7 +154,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 51,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
    "outputs": [],
    "source": [
@@ -182,7 +169,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 52,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
    "outputs": [],
    "source": [
@@ -191,7 +182,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 53,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
    "outputs": [],
    "source": [
@@ -201,6 +196,7 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 54,
    "metadata": {},
    "outputs": [
@@ -218,13 +214,22 @@
      "output_type": "execute_result"
     }
    ],
+=======
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "source": [
-    "basemap"
+    "# basemap"
    ]
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 55,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
    "outputs": [],
    "source": [
@@ -242,7 +247,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 56,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
    "outputs": [],
    "source": [
@@ -251,7 +260,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 57,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
    "outputs": [],
    "source": [
@@ -284,25 +297,25 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 58,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "[[[52.379189, 4.899431], [52.092876, 5.10448]], [[52.379189, 4.899431], [52.078663, 4.288788]], [[52.379189, 4.899431], [53.61239, -0.22219]], [[52.092876, 5.10448], [52.379189, 4.899431]], [[52.092876, 5.10448], [52.01667, 4.70833]], [[52.078663, 4.288788], [52.379189, 4.899431]], [[52.078663, 4.288788], [51.9225, 4.47917]], [[52.078663, 4.288788], [51.9775, 4.13333]], [[52.078663, 4.288788], [52.01667, 4.70833]], [[51.9225, 4.47917], [52.078663, 4.288788]], [[51.9225, 4.47917], [52.01667, 4.70833]], [[51.9225, 4.47917], [51.9775, 4.13333]], [[53.61239, -0.22219], [52.379189, 4.899431]], [[53.61239, -0.22219], [53.52285, -1.13116]], [[53.52285, -1.13116], [53.61239, -0.22219]], [[53.52285, -1.13116], [51.509865, -0.118092]], [[51.509865, -0.118092], [53.52285, -1.13116]], [[51.509865, -0.118092], [51.88921, 0.90421]], [[51.9775, 4.13333], [52.078663, 4.288788]], [[51.9775, 4.13333], [51.96375, 1.3511]], [[51.9775, 4.13333], [51.9225, 4.47917]], [[51.96375, 1.3511], [51.9775, 4.13333]], [[51.96375, 1.3511], [52.05917, 1.15545]], [[52.05917, 1.15545], [51.96375, 1.3511]], [[52.05917, 1.15545], [51.88921, 0.90421]], [[51.88921, 0.90421], [52.05917, 1.15545]], [[51.88921, 0.90421], [51.509865, -0.118092]], [[52.01667, 4.70833], [51.9225, 4.47917]], [[52.01667, 4.70833], [52.092876, 5.10448]], [[52.01667, 4.70833], [52.078663, 4.288788]]]\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "coordonneesvoisins = construirePointsImage(G)\n",
-    "print(coordonneesvoisins)"
+    "# print(coordonneesvoisins)"
    ]
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 59,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
    "outputs": [],
    "source": [
@@ -315,7 +328,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 60,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
    "outputs": [],
    "source": [
@@ -331,7 +348,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 61,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
    "outputs": [],
    "source": [
@@ -362,13 +383,13 @@
     "\t\treturn self.name\n",
     "\n",
     "\t'''\n",
-    "\tDeux noeuds sont egaux s'ils ont même nom\n",
+    "\tDeux noeuds sont égaux s'ils ont même nom\n",
     "\t'''\n",
     "\tdef egal(self, noeud):\n",
     "\t\tif(self.name == noeud.name):\n",
-    "\t\t\treturn \"Noeuds égaux\"\n",
+    "\t\t\treturn True\n",
     "\t\telse:\n",
-    "\t\t\treturn \"Noeuds différents\"\n",
+    "\t\t\treturn False\n",
     "\t\n",
     "\tdef getCoutMin(self):\n",
     "\t\tnoeuds = transport_relationships[['src', 'dst', 'cost']].to_dict('index')\n",
@@ -393,7 +414,7 @@
     "\t\t\t\tcost = nodes[node]['cost']\n",
     "\t\t\n",
     "\t\tif cost != 0:\n",
-    "\t\t\treturn \"Le coût entre les noeuds \\\"\" + self.name +\"\\\" et \\\"\" + noeud.name +\"\\\" est de : \" + str(cost)\n",
+    "\t\t\treturn cost\n",
     "\t\telse:\n",
     "\t\t\treturn \"L'un des noeuds est introuvable ou il n'existe pas de relation entre \\\"\" + self.name +\"\\\" et \\\"\" + noeud.name +\"\\\"\"\n",
     "\n",
@@ -407,7 +428,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 62,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
    "outputs": [],
    "source": [
@@ -439,7 +464,7 @@
     "\t\tliste_noms_noeuds = []\n",
     "\t\tfor noeud in self.noeuds:\n",
     "\t\t\tliste_noms_noeuds.append(noeud.getName())\n",
-    "\t\treturn print(liste_noms_noeuds)\n",
+    "\t\tprint(liste_noms_noeuds)\n",
     "\t\t\n",
     "\n",
     "\tdef creerArc(self, fichierarcs):\n",
@@ -494,6 +519,7 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 63,
    "metadata": {},
    "outputs": [
@@ -511,6 +537,22 @@
     "G.creerNoeuds('transport-nodes.csv')\n",
     "print(\"------\")\n",
     "G.creerArc('transport-relationships.csv')"
+=======
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "G = Graphe()\n",
+    "G.creerNoeuds('transport-nodes.csv')\n",
+    "am = Noeud('Amsterdam')\n",
+    "G.arcs\n",
+    "# print(G.arcs)\n",
+    "# str(G.noeuds)\n",
+    "# ok = Noeud(\"Amsterdam\")\n",
+    "# oka = Noeud(\"Den Haag\")\n",
+    "# print(ok.getCout(oka))\n",
+    "# G.getNoeud('Amsterdam')\n"
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    ]
   },
   {
@@ -522,19 +564,13 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 64,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "['Khady', 'Dame', 'Mansour', 'Mamadou']\n",
-      "['Dame', 'Mansour', 'Mamadou']\n",
-      "True\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "class Pile():\n",
     "\n",
@@ -552,15 +588,17 @@
     "    Retourne True si un noeud est dans la pile\n",
     "    '''\n",
     "    def contains_noeud(self, name):\n",
-    "        if name in self.elements:\n",
-    "            return True\n",
-    "        return False\n",
+    "        for element in self.elements:\n",
+    "            if(element.egal(name) == True):\n",
+    "                return True\n",
+    "        return False        \n",
+    "        \n",
     "\n",
     "    '''\n",
     "    Retourne true si la pile est vide\n",
     "    '''\n",
     "    def empty(self):\n",
-    "        if self.elements == 0:\n",
+    "        if len(self.elements) == 0:\n",
     "            return True\n",
     "        return False\n",
     "    \n",
@@ -584,24 +622,18 @@
     "f.push(\"Khady\")\n",
     "print(f.elements)\n",
     "f.remove()\n",
-    "print(f.elements)\n",
-    "print(f.contains_noeud('Dame'))"
+    "print(f.elements)"
    ]
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 65,
+=======
+   "execution_count": null,
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "['Khady', 'Dame', 'Mansour', 'Mamadou']\n",
-      "['Khady', 'Dame', 'Mansour']\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "class File(Pile):\n",
     "    def remove(self):\n",
@@ -617,9 +649,12 @@
     "p.push(\"Mansour\")\n",
     "p.push(\"Dame\")\n",
     "p.push(\"Khady\")\n",
+    "\n",
+    "\n",
     "print(p.elements)\n",
     "p.remove()\n",
-    "print(p.elements)"
+    "print(p.elements)\n",
+    "(print(p.elements[-1]))"
    ]
   },
   {
@@ -631,6 +666,7 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 66,
    "metadata": {},
    "outputs": [
@@ -657,41 +693,87 @@
      "output_type": "execute_result"
     }
    ],
+=======
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+>>>>>>> 85262ad7c291f3776bbf22fe0e2eb82662bb9166
    "source": [
     "# Algo BFS\n",
     "\n",
-    "def BFS(graphe:Graphe, noeud_source:Noeud):\n",
-    "    explored = []\n",
+    "def BFS(graphe:Graphe, noeud_source:Noeud, noeud_destination:Noeud):\n",
+    "    explored = File()\n",
     "    frontiere = File()\n",
     "    for voisin in graphe.getVoisins(noeud_source):\n",
     "        frontiere.push(voisin)\n",
-    "    explored.append(noeud_source)\n",
-    "    i = 0\n",
-    "    while(i!=1):\n",
-    "        explored.append(frontiere.elements[0])\n",
-    "        voisins = graphe.getVoisins(frontiere.remove())\n",
+    "    explored.push(noeud_source)\n",
+    "    if(noeud_destination.egal(noeud_source) == True):\n",
+    "            return noeud_source\n",
+    "    while(frontiere.empty() != True):\n",
+    "        remove = frontiere.remove()\n",
+    "        explored.push(remove)\n",
+    "        if(noeud_destination.egal(remove) == True):\n",
+    "            return remove\n",
+    "        voisins = graphe.getVoisins(remove)\n",
     "        for voisin in voisins:\n",
-    "            if ((voisin in explored) or (frontiere.contains_noeud(voisin) == True)):\n",
-    "                # frontiere.push(voisin)\n",
-    "                print(\"o\")\n",
-    "            else:\n",
-    "                frontiere.push(voisin)\n",
-    "        i += 1\n",
-    "        for f in frontiere.elements:\n",
-    "            print(f.name)\n",
-    "    return frontiere\n",
+    "            if (explored.contains_noeud(voisin) == False and frontiere.contains_noeud(voisin) == False):\n",
+    "                    frontiere.push(voisin)\n",
+    "    print('Pas de solution')\n",
+    "    return explored\n",
     "\n",
     "G = Graphe()\n",
     "G.creerNoeuds('transport-nodes.csv')\n",
     "am = Noeud('London')\n",
-    "# for n in BFS(G, am).elements:\n",
-    "#     print(n.getName())\n",
-    "print(\"\\n\")\n",
-    "# for n in G.getVoisins(am):\n",
-    "#     print(n.getName())\n",
+    "ok = Noeud('Londond')\n",
     "\n",
-    "BFS(G, am)\n",
-    "\n"
+    "# print(BFS(G, am, ok).name)\n",
+    "\n",
+    "# for i in BFS(G, am, ok).elements:\n",
+    "#     print(i.getName())\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def DFS(graphe:Graphe, noeud_source:Noeud, noeud_destination:Noeud):\n",
+    "    explored = File()\n",
+    "    frontiere = Pile()\n",
+    "    for voisin in graphe.getVoisins(noeud_source):\n",
+    "        frontiere.push(voisin)\n",
+    "    explored.push(noeud_source)\n",
+    "    if(noeud_destination.egal(noeud_source) == True):\n",
+    "            return noeud_source\n",
+    "    while(frontiere.empty() != True):\n",
+    "        remove = frontiere.remove()\n",
+    "        print(\"\\n\" + remove.name)\n",
+    "        explored.push(remove)\n",
+    "        if(noeud_destination.egal(remove) == True):\n",
+    "            return remove\n",
+    "        voisins = graphe.getVoisins(remove)\n",
+    "        for voisin in voisins:\n",
+    "            if (explored.contains_noeud(voisin) == False and frontiere.contains_noeud(voisin) == False):\n",
+    "                    frontiere.push(voisin)\n",
+    "    print('Pas de solution')\n",
+    "    return explored\n",
+    "\n",
+    "\n",
+    "\n",
+    "# G = Graphe()\n",
+    "# G.creerNoeuds('transport-nodes.csv')\n",
+    "# am = Noeud('London')\n",
+    "# ok = Noeud('Utrecht')\n",
+    "\n",
+    "# print(DFS(G, am, ok).name)"
    ]
   }
  ],
