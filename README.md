@@ -1,18 +1,18 @@
-Projet 2 POO2 LI3 option Genie Logiciel 2020/2021
+Projet 2 POO2 LGI3 option Génie Logiciel 2020/2021
 
 Ce projet divisé en 4 parties tourne au tour de l'analyse de données.
 
 1ere partie
-  Découvrire les librairies pandas, networkx et folium.
+  Découvrir les bibliothèques pandas, networkx et folium.
 
 2eme partie
-  Manipuler les Structures de Données en Python tout en utilisant la Programmation Orienté Objet.
+  Manipuler les structures de données en Python tout en utilisant la Programmation Orientée Objet.
 
 3eme partie
-  Implémenter une Pile et une Pile et aussi comprendre les ADT
+  Implémenter une Pile et une File et aussi comprendre les TDA
   
  4eme partie
   Comprendre les méthodes de parcours de graphe
   
-  Réalise par Alioune Badara FAM et Cheikh Tidiane GUEYE
+  Réalisé par Alioune Badara FAM et Cheikh Tidiane GUEYE
 
